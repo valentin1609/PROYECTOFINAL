@@ -1,0 +1,296 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+nav {
+  height: 40px;
+  width: 100%;
+  background-color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+}
+
+
+/*#menu: lista desplegable*/
+#menu ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#menu ul a {
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  letter-spacing: 1px;
+}
+#menu ul li {
+  position: relative;
+  float: left;
+}
+
+#menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#menu ul ul li {
+  float: none;
+  width: 150px;
+}
+#menu ul ul li:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#menu ul li:hover > ul {
+  display: block;
+}
+#menu ul li a {
+  padding-bottom: 1px;
+}
+#menu ul li a:hover {
+  border-bottom: 3px solid #3bdbec;
+  transition: 0.1s;
+}
+
+
+/*boton de sumate*/
+.b1 {
+  width: 80px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.b1:hover {
+  background-color: white;
+  color: black;
+  transition: 1s ease;
+}
+
+.b1::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background: transparent;
+  height: 50%;
+  width: 100%;
+  transform: perspective(1em) rotateX(48deg) scale(1, 0.35);
+  filter: blur(8px);
+  transition: 1s ease;
+}
+
+.b1:hover::before {
+  background-color: white;
+  top: 25px;
+}
+
+
+footer {
+  background-color: black;
+  padding: 5px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer a {
+  text-decoration: none;
+  color: #4d4d4d; 
+  transition: ease 1s;
+}
+
+footer a:hover {
+color: aliceblue;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/*seccion 1*/
+.principal {
+  padding-top: 70px;
+  background: url(milei1.png);
+  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.principal p {
+  font-size: 30px;
+  text-shadow: 1px 2px 2px #000000;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/*seccion 2*/
+.principal2 {
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+article {
+  background-image: linear-gradient(to bottom, #3bdaec3b, #fff);
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  color: black;
+  border-radius: 30px;
+}
+
+article h2 {
+  text-align: center;
+}
+
+/*botones y secciones que no se deben ver en modo escritorio*/
+#buttonM {
+  display: none;
+}
+
+#logochico {
+  display: none;
+}
+
+.lbl-menu {
+  display: none;
+}
+
+#btn-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 670px) {
+  
+  /*menu hamburguesa*/
+  .lbl-menu {
+    display: block;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 0px;
+    cursor: pointer;
+  }
+
+
+  .lbl-menu #spn1,
+  #spn2,
+  #spn3 {
+    position: absolute;
+    content: "";
+    background-color: white;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 400ms ease;
+  }
+  #spn1 {
+    top: 10px;
+  }
+  #spn2 {
+    top: 20px;
+  }
+  #spn3 {
+    top: 30px;
+  }
+
+
+
+  /*menu desplegable en en el movil*/
+  #menu {
+    position: absolute;
+    background-color: black;
+    top: 70px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all 500ms ease;
+    transform: translateY(-100%);
+    transform: translateX(100%);
+  }
+
+  #btn-menu:checked ~ #menu {
+    transform: translateY(100%);
+    transform: translateX(-0%);
+  }
+
+  #menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  #menu ul a {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #menu ul li {
+    position: relative;
+    right: 4.5%;
+  }
+
+
+  /*cosas que aparecen y desaparecen cuando estan en el celu*/
+  #buttonP {
+    display: none;
+  }
+
+  #buttonM {
+    display: block;
+  }
+
+  #logogrande {
+    display: none;
+  }
+
+  #logochico {
+    display: block;
+  }
+}
