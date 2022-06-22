@@ -230,7 +230,7 @@ main {
   padding-top: 70px;
   background: url(milei1.png);
   background-size: cover;
-  background-size: auto;
+  background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   height: 100vh;
