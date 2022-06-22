@@ -141,3 +141,15 @@ footer{
     align-items: center;
     justify-content: space-between;
 }
+
+
+
+@media only screen and (max-width: 670px) {
+    #menu {
+      display: none;
+    }
+    .headl {
+      width: 100%;
+      text-align: center;
+    }
+  }

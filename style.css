@@ -263,6 +263,7 @@ article {
   margin: 20px;
   color: black;
   border-radius: 30px;
+  width: 80%;
 }
 
 article h2 {
@@ -288,91 +289,92 @@ article h2 {
 
 @media only screen and (max-width: 670px) {
   
-  /*menu hamburguesa*/
-  .lbl-menu {
-    display: block;
-    background-color: transparent;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    top: 0px;
-    cursor: pointer;
-  }
 
-
-  .lbl-menu #spn1,
-  #spn2,
-  #spn3 {
-    position: absolute;
-    content: "";
-    background-color: white;
-    width: 40px;
-    height: 5px;
-    border-radius: 5px;
-    transition: all 400ms ease;
+    /*menu hamburguesa*/
+    .lbl-menu {
+      display: block;
+      background-color: transparent;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      top: 0px;
+      cursor: pointer;
+    }
+  
+  
+    .lbl-menu #spn1,
+    #spn2,
+    #spn3 {
+      position: absolute;
+      content: "";
+      background-color: white;
+      width: 40px;
+      height: 5px;
+      border-radius: 5px;
+      transition: all 400ms ease;
+    }
+    #spn1 {
+      top: 10px;
+    }
+    #spn2 {
+      top: 20px;
+    }
+    #spn3 {
+      top: 30px;
+    }
+  
+  
+  
+    /*menu desplegable en en el movil*/
+    #menu {
+      position: absolute;
+      background-color: black;
+      top: 70px;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      transition: all 500ms ease;
+      transform: translateY(-100%);
+      transform: translateX(100%);
+    }
+  
+    #btn-menu:checked ~ #menu {
+      transform: translateY(100%);
+      transform: translateX(-0%);
+    }
+  
+    #menu ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  
+    #menu ul a {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    #menu ul li {
+      position: relative;
+      right: 0px;
+    }
+  
+  
+    /*cosas que aparecen y desaparecen cuando estan en el celu*/
+    #buttonP {
+      display: none;
+    }
+  
+    #buttonM {
+      display: block;
+    }
+  
+    #logogrande {
+      display: none;
+    }
+  
+    #logochico {
+      display: block;
+    }
   }
-  #spn1 {
-    top: 10px;
-  }
-  #spn2 {
-    top: 20px;
-  }
-  #spn3 {
-    top: 30px;
-  }
-
-
-
-  /*menu desplegable en en el movil*/
-  #menu {
-    position: absolute;
-    background-color: black;
-    top: 70px;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    transition: all 500ms ease;
-    transform: translateY(-100%);
-    transform: translateX(100%);
-  }
-
-  #btn-menu:checked ~ #menu {
-    transform: translateY(100%);
-    transform: translateX(-0%);
-  }
-
-  #menu ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  #menu ul a {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-  #menu ul li {
-    position: relative;
-    right: 4.5%;
-  }
-
-
-  /*cosas que aparecen y desaparecen cuando estan en el celu*/
-  #buttonP {
-    display: none;
-  }
-
-  #buttonM {
-    display: block;
-  }
-
-  #logogrande {
-    display: none;
-  }
-
-  #logochico {
-    display: block;
-  }
-}
